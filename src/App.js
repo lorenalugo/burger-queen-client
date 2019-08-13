@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import history from './controllers/history';
+import Login from './components/Login/index';
+import Kitchen from './components/Kitchen/index';
+import Orders from './components/Orders/index';
+import PrivateRoute from './components/PrivateRoute/index';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const Container = styled.div`
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+`;
+
+const App = () => (
+  <Container>
+    <Router history={history}>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <PrivateRoute exact path="/orders" component={Orders} />
+        <PrivateRoute exact path="/kitchen" component={Kitchen} />
+      </Switch>
+    </Router>
+  </Container>
+);
 
 export default App;
