@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/burger-queen-client/static/css/main.7cfd5cf5.chunk.css",
+    "main.js": "/burger-queen-client/static/js/main.e7cd4f4f.chunk.js",
+    "main.js.map": "/burger-queen-client/static/js/main.e7cd4f4f.chunk.js.map",
+    "runtime~main.js": "/burger-queen-client/static/js/runtime~main.1077dcbe.js",
+    "runtime~main.js.map": "/burger-queen-client/static/js/runtime~main.1077dcbe.js.map",
+    "static/js/2.4cdf5cc5.chunk.js": "/burger-queen-client/static/js/2.4cdf5cc5.chunk.js",
+    "static/js/2.4cdf5cc5.chunk.js.map": "/burger-queen-client/static/js/2.4cdf5cc5.chunk.js.map",
+    "index.html": "/burger-queen-client/index.html",
+    "precache-manifest.644758286b6c6562bd3d6bb87c995273.js": "/burger-queen-client/precache-manifest.644758286b6c6562bd3d6bb87c995273.js",
+    "service-worker.js": "/burger-queen-client/service-worker.js",
+    "static/css/main.7cfd5cf5.chunk.css.map": "/burger-queen-client/static/css/main.7cfd5cf5.chunk.css.map",
+    "static/media/hamburger.png": "/burger-queen-client/static/media/hamburger.3a2549a0.png"
+  }
+}
