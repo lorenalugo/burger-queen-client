@@ -23,11 +23,13 @@ const Button = styled.button`
   margin-top: 10px;
   margin-right: 10px;
   font-weight: 700;
+  font-size: 14px;
   color: #000;
   background-color: #ff9a48;
   border: 1px solid #b8daff;
   :focus {
     background-color: #4D88FF;
+    color: #fff;
   }
 `;
 

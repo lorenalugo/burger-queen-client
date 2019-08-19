@@ -57,9 +57,9 @@ const Form = ({ onSubmit, onChange }) => {
             .then((response) => {
               if (response.status !== 200) {
                 if (response.status === 404) {
-                  throw new Error('User not found');
+                  throw new Error('Usuario no encontrado');
                 } else {
-                  throw new Error('Wrong password');
+                  throw new Error('Contraseña incorrecta');
                 }
               }
               return response.json();
@@ -81,14 +81,14 @@ const Form = ({ onSubmit, onChange }) => {
         }}
       >
         <Label htmlFor="email" className="Form-label">
-          Email
+          Correo Electrónico
         </Label>
         <Input id="email" className="Form-input" onChange={e => setEmailState(e.target.value)} />
         <Label htmlFor="password" className="Form-label">
-          Password
+          Contraseña
         </Label>
         <Input type="password" id="password" className="Form-input" />
-        <Button type="submit" className="Form-input Form-button">SUBMIT</Button>
+        <Button type="submit" className="Form-input Form-button">ENVIAR</Button>
       </form>
     </FormDiv>
   );

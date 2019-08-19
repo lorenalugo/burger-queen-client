@@ -21,6 +21,12 @@ const NavigationButton = styled.div`
     margin-right: 30px;
     color: #fff;
     text-decoration: none;
+    background-color: #4D88FF;
+    padding: 14px;
+    font-weight: 500;
+    :hover{
+      color: #000;
+    }
   }
 `;
 const Header = () => (

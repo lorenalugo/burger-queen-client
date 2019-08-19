@@ -19,9 +19,10 @@ const App = () => (
   <Container>
     <Router history={history}>
       <Switch>
-        <Route exact path="/" component={Login} />
+        <Route exact path={`${process.env.PUBLIC_URL}/`} component={Login} />
         <PrivateRoute exact path="/orders" component={Orders} />
         <PrivateRoute exact path="/kitchen" component={Kitchen} />
+        <Route path="*" component={() => '404 NOT FOUND'} />
       </Switch>
     </Router>
   </Container>

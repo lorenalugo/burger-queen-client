@@ -7,7 +7,7 @@ import logo from '../../assets/hamburger.png';
 
 const Container = styled.div`
   width: 70%;
-  margin: auto;
+  margin: 40px auto;
   box-sizing: border-box;
   text-align: center;
   background-color: #161616;
@@ -28,7 +28,7 @@ const Login = () => {
   return (
     <Container>
       <Image src={logo} alt="hamburger logo" />
-      <Title>LOGIN</Title>
+      <Title>INICIO DE SESIÓN</Title>
       <Form onSubmit={handleSubmit} onChange={handleError} />
       <ErrorMessage message={errorMessage} />
     </Container>

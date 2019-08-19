@@ -10,11 +10,9 @@ const FlexContainer = styled.div`
 const Item = styled.div`
   box-sizing: border-box;
   width: 23%;
-  height: 180px;
+  min-height: 100px;
   font-size: 16px;
   margin: 5px 1% 5px 0;
-  border: 1px solid #fff;
-  padding: 5px;
   background-color: #fff;
   color: #000;
 `;
@@ -22,30 +20,33 @@ const Row = styled.div`
   with: 100%;
   box-sizing: border-box;
   clear: both;
-  padding: 2px 0;
-  line-height: 2;
-`;
-const Col = styled.div`
-  width: 50%;
-  box-sizing: border-box;
-  float: left;
+  padding: 0;
 `;
 const ColB = styled.div`
   width: 80%;
   box-sizing: border-box;
   float: left;
+  line-height: 2;
+  border-top: 1px solid #000;
 `;
 const ColS = styled.div`
   width: 20%;
   box-sizing: border-box;
   float: left;
   text-align: center;
+  line-height: 2;
+  border-top: 1px solid #000;
 `;
 
 const Select = styled.select`
   background-color: #4D88FF;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  margin: 0;
 `;
 
 const OrdersFiltered = ({ status, items, onClick }) => (
@@ -57,24 +58,27 @@ const OrdersFiltered = ({ status, items, onClick }) => (
         data-type={status}
       >
         <Row>
-          <Col>
-            Cliente:
-            {' '}
-            {order.client.toUpperCase()}
-          </Col>
-          <Col>
-            <Select onChange={
-              (e) => {
-                const selected = e.target.value;
-                onClick(order._id, selected);
-              }}
-            >
-              <option value={order.status}>{order.status.toUpperCase()}</option>
-              <option value="canceled">CANCELED</option>
-              <option value="delivering">DELIVERING</option>
-              <option value="delivered">DELIVERED</option>
-            </Select>
-          </Col>
+          <Select onChange={
+            (e) => {
+              const selected = e.target.value;
+              onClick(order._id, selected);
+            }}
+          >
+            <option value={order.status}>{order.status.toUpperCase()}</option>
+            <option value="preparing">PREPARING</option>
+            <option value="canceled">CANCELED</option>
+            <option value="delivering">DELIVERING</option>
+            <option value="delivered">DELIVERED</option>
+          </Select>
+        </Row>
+        <Row>
+          Cliente:
+          {' '}
+          {order.client.toUpperCase()}
+        </Row>
+        <Row>
+          <ColS>CANT.</ColS>
+          <ColB>PRODUCTO</ColB>
         </Row>
         {order.products.map(obj => (
           <Row>
